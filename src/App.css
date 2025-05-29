@@ -1,0 +1,5 @@
+.nav-link.active,
+.dropdown-item.active {
+  font-weight: 600;
+  color: #0d6efd !important;
+}
