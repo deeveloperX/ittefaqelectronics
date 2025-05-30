@@ -7,6 +7,8 @@ import Contact from './pages/Contact';
 import AirCoolers from './pages/categories/AirCoolers';
 import Refrigerators from './pages/categories/Refrigerators';
 import AirConditioners from './pages/categories/AirConditioners';
+import Footer from './components/Footer';
+
 
 function App() {
   return (
@@ -22,6 +24,7 @@ function App() {
         <Route path="/products/refrigerators" element={<Refrigerators />} />
         <Route path="/products/aircoolers" element={<AirCoolers />} />
       </Routes>
+      <Footer />
     </>
   );
 }
