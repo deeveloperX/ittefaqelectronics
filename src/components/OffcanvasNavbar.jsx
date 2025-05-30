@@ -4,7 +4,7 @@ import {
   Button, Container, Nav, Navbar,
   NavDropdown, Offcanvas
 } from 'react-bootstrap';
-import logo from '../assets/apple-touch-icon.png';
+import logo from '/assets/apple-touch-icon.png';
 
 function OffcanvasNavbar() {
   const [show, setShow] = useState(false);

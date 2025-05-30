@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import logo from '../assets/apple-touch-icon.png';
+import logo from '/assets/apple-touch-icon.png';
 
 
 const Footer = () => {

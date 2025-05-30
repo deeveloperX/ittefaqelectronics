@@ -1,8 +1,8 @@
 import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
-import banner1 from '../assets/banner1.png';
-import banner2 from '../assets/banner2.png';
-import banner3 from '../assets/banner3.png';
+import banner1 from '/assets/banner1.png';
+import banner2 from '/assets/banner2.png';
+import banner3 from '/assets/banner3.png';
 import BrandMarquee from "../components/BrandMarquee";
 import ImageGrid from '../components/ImageGrid';
 import ProductCard from '../components/ProductCard';
@@ -14,15 +14,15 @@ import Col from 'react-bootstrap/Col';
 
 // Data
 const featured = [
-    { id: 1, image: '/src/assets/products/water-cooler.jpeg', name: 'Water Cooler', price: 42499 },
-    { id: 2, image: '/src/assets/products/AirCooler-GF6700-Supreme1.jpeg', name: 'GF-6700 Supreme', price: 28500 },
-    { id: 3, image: '/src/assets/products/Kitchen-4in1-deal.webp', name: 'Kitchen deal 4 in 1', price: 250000 },
+    { id: 1, image: '/assets/products/water-cooler.jpeg', name: 'Water Cooler', price: 42499 },
+    { id: 2, image: '/assets/products/AirCooler-GF6700-Supreme1.jpeg', name: 'GF-6700 Supreme', price: 28500 },
+    { id: 3, image: '/assets/products/Kitchen-4in1-deal.webp', name: 'Kitchen deal 4 in 1', price: 250000 },
   ];
   
   const trending = [
-    { image: '/src/assets/products/Kitchen-hood-generaltec-2.webp', name: 'Kitchen hood', price: 25800 },
-    { image: '/src/assets/products/AirCooler-PK5500-3.jpeg', name: 'AirCooler PK-5500', price: 34500 },
-    { image: '/src/assets/products/AirCooler-PakFan-PK4750-1.jpeg', name: 'AirCooler PK-4750', price: 29000 },
+    { image: '/assets/products/Kitchen-hood-generaltec-2.webp', name: 'Kitchen hood', price: 25800 },
+    { image: '/assets/products/AirCooler-PK5500-3.jpeg', name: 'AirCooler PK-5500', price: 34500 },
+    { image: '/assets/products/AirCooler-PakFan-PK4750-1.jpeg', name: 'AirCooler PK-4750', price: 29000 },
   ];
 
 

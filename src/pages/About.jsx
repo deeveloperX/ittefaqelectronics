@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { FaCheckCircle, FaMapMarkerAlt, FaInstagram } from 'react-icons/fa';
-import storeImage from '../assets/masonry/Masonry4.jpeg'; // Replace with your actual image
+import storeImage from '/assets/masonry/Masonry4.jpeg'; // Replace with your actual image
 
 function About() {
   return (
