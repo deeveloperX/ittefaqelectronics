@@ -1,15 +1,20 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import Button from 'react-bootstrap/Button';
-import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import Offcanvas from 'react-bootstrap/Offcanvas';
-import logo from '../assets/apple-touch-icon.png'; // if you want to import the logo
+import React, { useState, useEffect } from 'react';
+import { NavLink, useLocation } from 'react-router-dom';
+import {
+  Button, Container, Nav, Navbar,
+  NavDropdown, Offcanvas
+} from 'react-bootstrap';
+import logo from '/assets/apple-touch-icon.png';
 
 function OffcanvasNavbar() {
+  const [show, setShow] = useState(false);
+  const location = useLocation();
+
+  // Auto-close Offcanvas on route change
+  useEffect(() => {
+    setShow(false);
+  }, [location.pathname]);
+
   return (
     <Navbar expand="lg" className="bg-light shadow-sm mb-3">
       <Container fluid>
@@ -29,11 +34,13 @@ function OffcanvasNavbar() {
           </NavLink>
         </Navbar.Brand>
 
-        <Navbar.Toggle aria-controls="offcanvasNavbar" />
+        <Navbar.Toggle aria-controls="offcanvasNavbar" onClick={() => setShow(true)} />
         <Navbar.Offcanvas
           id="offcanvasNavbar"
           aria-labelledby="offcanvasNavbarLabel"
           placement="end"
+          show={show}
+          onHide={() => setShow(false)}
         >
           <Offcanvas.Header closeButton>
             <Offcanvas.Title id="offcanvasNavbarLabel">
@@ -111,13 +118,13 @@ function OffcanvasNavbar() {
             </Nav>
 
             {/* Right side phone call button */}
-            <div className="d-flex align-items-center">
+            <div className="d-flex align-items-center mt-3 mt-lg-0">
               <Button
                 variant="outline-success"
-                href="tel:+923001234567"
+                href="tel:+923216126870"
                 className="fw-semibold"
               >
-                📞 +92 300 1234567
+                📞 +92 321 6126870
               </Button>
             </div>
           </Offcanvas.Body>
