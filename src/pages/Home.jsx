@@ -9,24 +9,19 @@ import ProductCard from '../components/ProductCard';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import { productsData } from '../data/products';
+import { Link } from 'react-router-dom'; // add this at the top
 
 
-
-// Data
-const featured = [
-    { id: 1, image: '/assets/products/water-cooler.jpeg', name: 'Water Cooler', price: 42499 },
-    { id: 2, image: '/assets/products/AirCooler-GF6700-Supreme1.jpeg', name: 'GF-6700 Supreme', price: 28500 },
-    { id: 3, image: '/assets/products/Kitchen-4in1-deal.webp', name: 'Kitchen deal 4 in 1', price: 250000 },
-  ];
-  
-  const trending = [
-    { image: '/assets/products/Kitchen-hood-generaltec-2.webp', name: 'Kitchen hood', price: 25800 },
-    { image: '/assets/products/AirCooler-PK5500-3.jpeg', name: 'AirCooler PK-5500', price: 34500 },
-    { image: '/assets/products/AirCooler-PakFan-PK4750-1.jpeg', name: 'AirCooler PK-4750', price: 29000 },
-  ];
-
+// Optional: Adjust how many items to show
+const featuredCount = 6;
+// const trendingCount = 3;
 
 const Home = () => {
+  const featured = productsData.filter(product => product.featured);
+  // const featured = productsData.slice(0, featuredCount);
+  // const trending = productsData.slice(featuredCount, featuredCount + trendingCount);
+
   return (
     <div>
       {/* Hero Carousel */}
@@ -49,26 +44,34 @@ const Home = () => {
       <Container className="my-5">
         <h2 className="text-center mb-4">🌟 Featured Products</h2>
         <Row className="g-4">
-          {featured.map((item, index) => (
-            <Col key={index} xs={12} sm={6} md={4}>
+          {featured.map((item) => (
+            <Col key={item.id} xs={12} sm={6} md={4}>
               <ProductCard {...item} />
             </Col>
           ))}
         </Row>
       </Container>
 
-      <Container className="my-5">
+      {/* <Container className="my-5">
         <h2 className="text-center mb-4">🔥 Trending Products</h2>
         <Row className="g-4">
-          {trending.map((item, index) => (
-            <Col key={index} xs={12} sm={6} md={4}>
+          {trending.map((item) => (
+            <Col key={item.id} xs={12} sm={6} md={4}>
               <ProductCard {...item} />
             </Col>
           ))}
         </Row>
-      </Container>
+      </Container> */}
 
       {/* <Footer /> */}
+
+      <div className="text-center mt-4">
+        <Link to="/products">
+          <button className='explore-btn'>
+            Explore Products
+          </button>
+        </Link>
+      </div>
     </div>
   );
 };

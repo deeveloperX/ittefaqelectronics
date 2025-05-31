@@ -16,7 +16,7 @@ function OffcanvasNavbar() {
   }, [location.pathname]);
 
   return (
-    <Navbar expand="lg" className="bg-light shadow-sm mb-3">
+    <Navbar expand="lg" className="bg-light shadow-sm mb-3 sticky-top">
       <Container fluid>
         {/* Logo and brand */}
         <Navbar.Brand className="d-flex align-items-center">
@@ -59,45 +59,14 @@ function OffcanvasNavbar() {
                 Home
               </NavLink>
 
-              <NavDropdown title="Products" id="products-dropdown">
-                <NavDropdown.Item
-                  as={NavLink}
-                  to="/products/airconditioners"
-                  className={({ isActive }) =>
-                    isActive ? 'dropdown-item active' : 'dropdown-item'
-                  }
-                >
-                  Air Conditioners
-                </NavDropdown.Item>
-                <NavDropdown.Item
-                  as={NavLink}
-                  to="/products/refrigerators"
-                  className={({ isActive }) =>
-                    isActive ? 'dropdown-item active' : 'dropdown-item'
-                  }
-                >
-                  Refrigerators
-                </NavDropdown.Item>
-                <NavDropdown.Item
-                  as={NavLink}
-                  to="/products/aircoolers"
-                  className={({ isActive }) =>
-                    isActive ? 'dropdown-item active' : 'dropdown-item'
-                  }
-                >
-                  Air Coolers
-                </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item
-                  as={NavLink}
-                  to="/products"
-                  className={({ isActive }) =>
-                    isActive ? 'dropdown-item active' : 'dropdown-item'
-                  }
-                >
-                  All Products
-                </NavDropdown.Item>
-              </NavDropdown>
+              <NavLink
+                to="/products"
+                className={({ isActive }) =>
+                  isActive ? 'nav-link active' : 'nav-link'
+                }
+              >
+                Products
+              </NavLink>
 
               <NavLink
                 to="/about"
